@@ -13,20 +13,12 @@
   "privileged": true,
 
   // Mount USB devices (debug probes, UART interfaces, ...)
-  "mounts": ["source=/dev/bus/usb/,target=/dev/bus/usb/,type=bind"],
+  "runArgs": ["--device=/dev/bus/usb"],
 
   // Pre-configure settings and extensions
   "customizations": {
     "vscode": {
       "settings": {
-        "[cmake]": {
-          "editor.tabSize": 8,
-          "editor.insertSpaces": false,
-        },
-        "[makefile]": {
-          "editor.tabSize": 8,
-        },
-
         "files.associations": {
           "*.c": "c",
           "*.h": "c",
@@ -36,10 +28,6 @@
           "*.asm": "arm",
           "*.ld": "linkerscript",
         },
-
-        "editor.insertSpaces": true,
-        "editor.rulers": [80],
-        "editor.tabSize": 2,
 
         "C_Cpp.default.compilerPath": "/opt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc",
         "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
