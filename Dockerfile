@@ -14,7 +14,9 @@ USER root
 RUN apk add --no-cache \
     cmake \
     curl \
+    libc6-compat \
     make \
+    ninja \
     openocd \
     tar \
     udev \
